@@ -3,8 +3,9 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
+require('dotenv').config();
 
-const uri = "mongodb+srv://ebenhaezer2004:oNBj8qmkcKCqmChR@phiscord.glioxek.mongodb.net/?appName=phiscord";
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
